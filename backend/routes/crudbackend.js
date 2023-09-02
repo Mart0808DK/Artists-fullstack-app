@@ -1,10 +1,8 @@
-import express, { json } from "express";
-import { futimesSync } from "fs";
 import fs from "fs/promises";
 
-const app = express();
+// const app = express();
 
-app.use(express.json());
+// app.use(express.json());
 
 //------------------------------------ Helper functions
 
@@ -13,8 +11,8 @@ async function getArtists(path) {
     return JSON.parse(String(data));
 }
 
-async function WriteArtistsToDataBase(artistsJson, path) {
-    fs.writeFile(path, JSON.stringify(artistsJson, null, 2));
+async function WriteArtistsToDataBase(path, artistArr) {
+    fs.writeFile(path, JSON.stringify(artistArr, null, 2));
 }
 
 export async function getArtistsData(req, res) {
@@ -28,7 +26,7 @@ export async function postArtistsData(req, res) {
     const id = String(new Date().getTime());
     newArtist.id = id;
     artists.push(newArtist);
-    WriteArtistsToDataBase(artists, "../data/artists.json");
+    await WriteArtistsToDataBase(artists, "../data/artists.json");
 
     res.json(artists);
 }
@@ -37,27 +35,27 @@ export async function getArtistsDataId(req, res) {
     const id = req.params.id;
     const artist = await getArtists("../data/artists.json");
     const result = await artist.find(artists => artists.id === id);
-    res.send(result);
+    if (result) {
+        res.send(result);
+    } else {
+        res.status(404).json("Artists not Found")
+    }
+    
 }
 
 export async function updateArtistId(req, res) {
     const id = req.params.id;
-    const artist = await getArtists("../data/artists.json");
-    const updatedArtist = artist.find(artists => artists.id === id);
+    const artists = await getArtists("../data/artistList.json");
+    const updatedArtistIndex = artists.findIndex(artist => artist.id === id);
 
-    updatedArtist.name = req.body.name;
-    updatedArtist.birthdate = req.body.birthdate;
-    updatedArtist.activeSince = req.body.activeSince;
-    updatedArtist.genres = req.body.genres;
-    updatedArtist.labels = req.body.labels;
-    updatedArtist.website = req.body.website;
-    updatedArtist.image = req.body.image;
-    updatedArtist.roles = req.body.roles;
-    updatedArtist.shortDescription = req.body.shortDescription;
-
-    WriteArtistsToDataBase(artist, "../data/artists.json");
-
-    res.json(artist);
+    if (updatedArtistIndex !== -1) {
+        const updatedArtist = req.body;
+        artists[updatedArtistIndex] = { ...artists[updatedArtistIndex], ...updatedArtist };
+        await writeArtistsToDatabase("../data/artistList.json", artists);
+        res.json(artists);
+    } else {
+        res.status(404).json({ error: "Artist not found" });
+    }
 }
 
 export async function deleteArtistId(req, res) {
@@ -118,15 +116,15 @@ export async function deleteArtistId(req, res) {
 //     res.json(artists);
 // });
 
-app.delete("/artists/:id", async (req, res) => {
-    const id = req.params.id;
-    const data = await fs.readFile("../data/artists.json");
-    const artists = JSON.parse(data);
-    const updatedArtists = artists.filter(artist => artist.id !== id);
-    fs.writeFile("../data/artist.json", JSON.stringify(updatedArtists, null, 2));
-    res.json(updatedArtists);
-});
+// app.delete("/artists/:id", async (req, res) => {
+//     const id = req.params.id;
+//     const data = await fs.readFile("../data/artists.json");
+//     const artists = JSON.parse(data);
+//     const updatedArtists = artists.filter(artist => artist.id !== id);
+//     fs.writeFile("../data/artist.json", JSON.stringify(updatedArtists, null, 2));
+//     res.json(updatedArtists);
+// });
 
-app.listen(5000, () => {
-    console.log("Server started on port 5000!");
-});
+// app.listen(5000, () => {
+//     console.log("Server started on port 5000!");
+// });

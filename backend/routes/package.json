@@ -2,9 +2,9 @@
   "name": "routes",
   "version": "1.0.0",
   "description": "",
-  "main": "crudbackend.js",
+  "main": "router.js",
   "scripts": {
-    "start": "node --watch crudbackend.js"
+    "start": "node --watch router.js"
   },
   "type": "module",
   "keywords": [],

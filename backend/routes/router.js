@@ -1,21 +1,26 @@
-import express from "express"
+import express from "express";
 import { getArtistsData } from "./crudbackend.js";
 import { postArtistsData } from "./crudbackend.js";
 import { getArtistsDataId } from "./crudbackend.js";
 import { updateArtistId } from "./crudbackend.js";
 import { deleteArtistId } from "./crudbackend.js";
 
+const app = express();
 
-const router = express.Router();
+app.use(express.json());
 
+const port = 5000;
 
+app.get("/artists", getArtistsData);
 
-router.get("/artists", getArtistsData)
+app.post("/artists", postArtistsData);
 
-router.post("/artists", postArtistsData)
+app.get("artists/:id", getArtistsDataId);
 
-router.get("artists/:id", getArtistsDataId)
+app.put("/artists/:id", updateArtistId);
 
-router.put("/artists/:id", updateArtistId)
+app.delete("/artists/:id", deleteArtistId);
 
-router.delete("/artists/:id", deleteArtistId)
+app.listen(port, () => {
+    console.log("Server started on port 5000!");
+});
