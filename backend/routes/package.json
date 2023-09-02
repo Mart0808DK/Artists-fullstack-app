@@ -1,0 +1,16 @@
+{
+  "name": "routes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "crudbackend.js",
+  "scripts": {
+    "start": "node --watch crudbackend.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
