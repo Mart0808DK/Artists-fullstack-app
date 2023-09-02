@@ -38,24 +38,28 @@ export async function getArtistsDataId(req, res) {
     if (result) {
         res.send(result);
     } else {
-        res.status(404).json("Artists not Found")
+        res.status(404).json("Artists not Found");
     }
-    
 }
 
 export async function updateArtistId(req, res) {
     const id = req.params.id;
-    const artists = await getArtists("../data/artistList.json");
-    const updatedArtistIndex = artists.findIndex(artist => artist.id === id);
+    const artist = await getArtists("../data/artists.json");
+    const updatedArtist = artist.find(artists => artists.id === id);
 
-    if (updatedArtistIndex !== -1) {
-        const updatedArtist = req.body;
-        artists[updatedArtistIndex] = { ...artists[updatedArtistIndex], ...updatedArtist };
-        await writeArtistsToDatabase("../data/artistList.json", artists);
-        res.json(artists);
-    } else {
-        res.status(404).json({ error: "Artist not found" });
-    }
+    updatedArtist.name = req.body.name;
+    updatedArtist.birthdate = req.body.birthdate;
+    updatedArtist.activeSince = req.body.activeSince;
+    updatedArtist.genres = req.body.genres;
+    updatedArtist.labels = req.body.labels;
+    updatedArtist.website = req.body.website;
+    updatedArtist.image = req.body.image;
+    updatedArtist.roles = req.body.roles;
+    updatedArtist.shortDescription = req.body.shortDescription;
+
+    await WriteArtistsToDataBase(artist, "../data/artists.json");
+
+    res.json(artist);
 }
 
 export async function deleteArtistId(req, res) {
