@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martify Music and Artists</title>
+    <link rel="stylesheet" href="/frontend/styles/styles.css">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+</head>
+<body>
+
+    <header>
+        <h1>Martify Music and Artists</h1>
+    </header>
+
+    <main>
+
+        <section id="search-artists">
+
+            <div>
+                <label for="artist-search">Search</label>
+                <input type="search" id="artist-search" name="search" placeholder="Search by name">
+            </div>
+
+            <div>
+                <label for="artist-sort">Sort Artist</label>
+                <select id="artist-sort">
+                    <option value="" selected></option>
+                    <option value="name-ascending">Name A-Z</option>
+                    <option value="name-decemding">Name Z-A</option>
+                    <option value="active-since-ascending">Active Since Earlyiest</option>
+                    <option value="active-since-decending">Active Since Latest</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="artist-filter-favorites">Show Favorite Artist</label>
+                <input type="checkbox" name="filter-fav" id="filter-fav">
+            </div>
+        </section>
+
+        <div>
+            <h2>Artists</h2>
+            <section class="grid-container"></section>
+        </div>
+
+        <dialog>
+            <form action="" id="form-create">
+                <h2>Add Artist</h2>
+                 <label for="name-create">Name</label>
+                    <input type="text" name="name" id="name-create-form">
+                    <label for="birthdate-create">Birthdate</label>
+                    <input type="date" name="birthdate" id="birthdate-create-form">
+                    <label for="activeSince-create">Active Since</label>
+                    <input type="date" name="activeSince" id="activeSince-create">
+                    <label for="genres-create-form">Genres</label>
+                    <textarea name="genres" id="genres-create-form" cols="30" rows="4" placeholder="Pop, HipHop, etc."></textarea>
+                    <label for="labels-create-form">Labels</label>
+                    <textarea name="labels" id="labels-create-form" cols="30" rows="4" placeholder="Sony, Death Row, etc."></textarea>
+                    <label for="roles-create">Roles</label>
+                    <textarea name="roles" id="roles-create-form" cols="40" rows="4" placeholder="Singer, Drummer, etc."></textarea>
+                    <label for="shortDescription-create-form">Short description</label>
+                    <textarea name="shortDescription" id="shortDescription-create-form" cols="50" rows="3"></textarea>
+                    <label for="website-create-form">Website</label>
+                    <input type="url" name="website" id="website-create-form">
+                    <label for="image-create-form">Image URL</label>
+                    <input type="url" name="image" id="image-create-form">
+                <button>Create Artist</button>
+                <button type="reset">Clear</button>
+            </form>
+        </dialog>
+
+        <dialog>
+            <form action="" id="form-update">
+                <h2>Update Artist</h2>
+                 <label for="name-update">Name</label>
+                    <input type="text" name="name" id="name-update-form">
+                    <label for="birthdate-update">Birthdate</label>
+                    <input type="date" name="birthdate" id="birthdate-update-form">
+                    <label for="activeSince-update">Active Since</label>
+                    <input type="date" name="activeSince" id="activeSince-update">
+                    <label for="genres-update-form">Genres</label>
+                    <textarea name="genres" id="genres-update-form" cols="30" rows="4" placeholder="Pop, HipHop, etc."></textarea>
+                    <label for="labels-update-form">Labels</label>
+                    <textarea name="labels" id="labels-update-form" cols="30" rows="4" placeholder="Sony, Death Row, etc."></textarea>
+                    <label for="roles-update-form">Roles</label>
+                    <textarea name="roles" id="roles-update-form" cols="30" rows="4" placeholder="Singer, Drummer, etc."></textarea>
+                    <label for="shortDescription-update-form">Short description</label>
+                    <textarea name="shortDescription" id="shortDescription-update-form" cols="50" rows="5"></textarea>
+                    <label for="website-update-form">Website</label>
+                    <input type="url" name="website" id="website-update-form">
+                    <label for="image-update-form">Image URL</label>
+                    <input type="url" name="image" id="image-update-form">
+                <button>Update Artist</button>
+                <button type="reset">Clear</button>
+            </form>
+        </dialog>
+    </main>
+
+    <div id="toast-container"></div>
+
+    <footer>
+        <i>By Martin E Nielsen</i>
+    </footer>
+
+    <script type="module" src="/frontend/frontendJs/main.js"></script>
+    
+</body>
+</html>

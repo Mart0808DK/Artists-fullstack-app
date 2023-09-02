@@ -9,7 +9,8 @@
         "website": "https://www.davidbowie.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/David_Bowie_-_TopPop_1974_03.png",
         "roles": ["Singer", "Songwriter", "Actor"],
-        "shortDescription": "Iconic musician and actor"
+        "shortDescription": "Iconic musician and actor",
+        "favorites": false
     },
     {
         "id": "02",
@@ -21,7 +22,8 @@
         "website": "https://www.jimihendrix.com/",
         "image": "https://live.staticflickr.com/5612/31080158030_b1d5d137a7_b.jpg",
         "roles": ["Guitarist", "Singer", "Songwriter"],
-        "shortDescription": "Guitar virtuoso and rock icon"
+        "shortDescription": "Guitar virtuoso and rock icon",
+        "favorites": false
     },
     {
         "id": "03",
@@ -33,7 +35,8 @@
         "website": "https://www.queenonline.com/",
         "image": "https://live.staticflickr.com/3401/3479284116_3a70e29a02_c.jpg",
         "roles": ["Singer", "Songwriter", "Pianist"],
-        "shortDescription": "Legendary frontman of Queen"
+        "shortDescription": "Legendary frontman of Queen",
+        "favorites": false
     },
     {
         "id": "04",
@@ -45,7 +48,8 @@
         "website": "https://www.mickjagger.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/3/31/Mick_Jagger_%281982%29.jpg",
         "roles": ["Singer", "Songwriter"],
-        "shortDescription": "Legendary Rolling Stones frontman"
+        "shortDescription": "Legendary Rolling Stones frontman",
+        "favorites": false
     },
     {
         "id": "05",
@@ -57,7 +61,8 @@
         "website": "https://www.jimmypage.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/Jimmy_Page_early.jpg",
         "roles": ["Guitarist", "Songwriter", "Producer"],
-        "shortDescription": "Led Zeppelin guitarist"
+        "shortDescription": "Led Zeppelin guitarist",
+        "favorites": false
     },
     {
         "id": "06",
@@ -69,7 +74,8 @@
         "website": "https://www.rogerwaters.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Roger_Waters_en_el_Palau_Sant_Jordi_de_Barcelona_%28The_Wall_Live%29_-_04_%28crop%29.jpg",
         "roles": ["Singer", "Bassist", "Songwriter"],
-        "shortDescription": "Pink Floyd co-founder"
+        "shortDescription": "Pink Floyd co-founder",
+        "favorites": false
     },
     {
         "id": "07",
@@ -81,7 +87,8 @@
         "website": "https://www.pattismith.net/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Patti_Smith_performing_in_Finland%2C_2007.jpg",
         "roles": ["Singer", "Songwriter", "Poet"],
-        "shortDescription": "Punk rock pioneer"
+        "shortDescription": "Punk rock pioneer",
+        "favorites": false
     },
     {
         "id": "08",
@@ -93,7 +100,8 @@
         "website": "https://www.ericclapton.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Eric_Clapton_1.jpg",
         "roles": ["Guitarist", "Singer", "Songwriter"],
-        "shortDescription": "Legendary blues and rock guitarist"
+        "shortDescription": "Legendary blues and rock guitarist",
+        "favorites": false
     },
     {
         "id": "09",
@@ -105,7 +113,8 @@
         "website": "https://www.stevienicks.net/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/2/29/Stevie_Nicks_2017.jpg",
         "roles": ["Singer", "Songwriter"],
-        "shortDescription": "Fleetwood Mac vocalist"
+        "shortDescription": "Fleetwood Mac vocalist",
+        "favorites": false
     },
     {
         "id": "10",
@@ -115,9 +124,10 @@
         "genres": ["Rock", "Hard Rock", "Country Rock"],
         "labels": ["Asylum Records", "Eagles Records"],
         "website": "https://www.joewalsh.com/",
-        "image": "https://upload.wikimedia.org/wikipedia/commons/9/93/Joe_Walsh.png",
+        "image": "https://upload.wikimedia.org/w",
         "roles": ["Guitarist", "Singer", "Songwriter"],
-        "shortDescription": "Eagles guitarist and rock solo artist"
+        "shortDescription": "Eagles guitarist and rock solo artist",
+        "favorites": false
     },
     {
         "id": "11",
@@ -129,7 +139,8 @@
         "website": "https://www.tompetty.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Tom_Petty_Live_in_Horsens.jpg",
         "roles": ["Singer", "Songwriter", "Guitarist"],
-        "shortDescription": "Heartland rock legend"
+        "shortDescription": "Heartland rock legend",
+        "favorites": false
     },
     {
         "id": "12",
@@ -141,7 +152,8 @@
         "website": "https://www.steveperry.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/e/e9/Steve_Perry%2C_cropped_from_Steve_Perry_%26_Efrim_Manuel_Manuck_03.jpg",
         "roles": ["Singer", "Songwriter"],
-        "shortDescription": "Journey's iconic frontman"
+        "shortDescription": "Journey's iconic frontman",
+        "favorites": false
     },
     {
         "id": "13",
@@ -153,7 +165,8 @@
         "website": "https://www.joanjett.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Joan_Jett_1.jpg",
         "roles": ["Singer", "Guitarist", "Songwriter"],
-        "shortDescription": "Queen of rock 'n' roll"
+        "shortDescription": "Queen of rock 'n' roll",
+        "favorites": false
     },
     {
         "id": "14",
@@ -165,7 +178,8 @@
         "website": "https://www.billyjoel.com/",
         "image": "https://media.snl.no/media/242256/standard_compressed_billy-joel.jpg",
         "roles": ["Singer", "Songwriter", "Pianist"],
-        "shortDescription": "Piano Man"
+        "shortDescription": "Piano Man",
+        "favorites": false
     },
     {
         "id": "15",
@@ -177,7 +191,8 @@
         "website": "https://www.van-halen.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Eddie_Van_Halen_at_the_New_Haven_Coliseum_2.jpg",
         "roles": ["Guitarist", "Songwriter"],
-        "shortDescription": "Guitar legend of Van Halen"
+        "shortDescription": "Guitar legend of Van Halen",
+        "favorites": false
     },
     {
         "id": "16",
@@ -189,7 +204,8 @@
         "website": "https://www.blondie.net/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Blondie_-_Debbie_Harry_-_Zwarte_Cross_2011_%28cropped%29.jpg",
         "roles": ["Singer", "Songwriter"],
-        "shortDescription": "Blondie's iconic frontwoman"
+        "shortDescription": "Blondie's iconic frontwoman",
+        "favorites": false
     },
     {
         "id": "17",
@@ -201,7 +217,8 @@
         "website": "https://www.bandboston.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/7/76/TomScholz.JPG",
         "roles": ["Guitarist", "Songwriter"],
-        "shortDescription": "Founder of the band Boston"
+        "shortDescription": "Founder of the band Boston",
+        "favorites": false
     },
     {
         "id": "18",
@@ -213,7 +230,8 @@
         "website": "https://www.thepretenders.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Chrissie_Hynde_%282021%29_%28cropped%29.jpg",
         "roles": ["Singer", "Guitarist", "Songwriter"],
-        "shortDescription": "Frontwoman of The Pretenders"
+        "shortDescription": "Frontwoman of The Pretenders",
+        "favorites": false
     },
     {
         "id": "19",
@@ -225,7 +243,8 @@
         "website": "https://www.frampton.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/b/b6/Peter_Frampton_at_the_2011_Ottawa_Bluesfest_%28cropped%29.jpg",
         "roles": ["Guitarist", "Singer", "Songwriter"],
-        "shortDescription": "Frampton Comes Alive!"
+        "shortDescription": "Frampton Comes Alive!",
+        "favorites": false
     },
     {
         "id": "20",
@@ -237,6 +256,7 @@
         "website": "https://www.robertplant.com/",
         "image": "https://upload.wikimedia.org/wikipedia/commons/c/cc/Robert_Plant_at_the_Palace_Theatre%2C_Manchester.jpg",
         "roles": ["Singer", "Songwriter"],
-        "shortDescription": "Led Zeppelin's golden voice"
+        "shortDescription": "Led Zeppelin's golden voice",
+        "favorites": false
     }
 ]
