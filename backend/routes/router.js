@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors"
 import { getArtistsData } from "./crudbackend.js";
 import { postArtistsData } from "./crudbackend.js";
 import { getArtistsDataId } from "./crudbackend.js";
@@ -8,6 +9,7 @@ import { deleteArtistId } from "./crudbackend.js";
 const app = express();
 
 app.use(express.json());
+app.use(cors())
 
 const port = 5000;
 

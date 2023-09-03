@@ -9,21 +9,21 @@ let selectedUser;
 window.addEventListener("load", main);
 
 function main() {
-    updateUsersGrid(); // to initialize the grid view with users
+    updateArtistGrid(); // to initialize the grid view with users
     // event listeners
-    document.querySelector("#form-create").addEventListener("submit", createUser);
-    document.querySelector("#form-update").addEventListener("submit", updateUser);
+//     document.querySelector("#form-create").addEventListener("submit", createUser);
+//     document.querySelector("#form-update").addEventListener("submit", updateUser);
 }
 
 // ============ READ ============ //
 
-// async function updateUsersGrid() {
-//     const artists = await readUsers();
-//     displayUsers(users);
-// }
+async function updateArtistGrid() {
+    const artists = await readArtists();
+    displayUsers(artists);
+}
 
 // Read (GET) all users from Firebase (Database) using REST API
-async function readUsers() {
+async function readArtists() {
     const response = await fetch(`${endpoint}/artists`);
     const data = await response.json();
     // const users = Object.keys(data).map(key => ({ id: key, ...data[key] })); // from object to array
@@ -31,25 +31,32 @@ async function readUsers() {
 }
 
 // Create HTML and display all users from given list
-function displayUsers(list) {
+function showArtists(artists) {
     // reset <section id="users-grid" class="grid-container">...</section>
-    document.querySelector("#users-grid").innerHTML = "";
+    document.querySelector("#artists-grid").innerHTML = "";
     //loop through all users and create an article with content for each
-    for (const user of list) {
-        document.querySelector("#users-grid").insertAdjacentHTML(
+    for (const artist of artists) {
+        document.querySelector("#artists-grid").insertAdjacentHTML(
             "beforeend",
             /*html*/ `
             <article>
-                <img src="${user.image}">
-                <h2>${user.name}</h2>
-                <p>${user.title}</p>
-                <a href="mailto:${user.mail}">${user.mail}</a>
+                <img src="${artist.image}">
+                <h3>${artist.name}</h3>
+                <p>${artist.birthdate}</p>
+                <p>${artist.activeSince}</p>
+                <i>${artist.genres}</i>
+                <p>${artist.labels}</p>
+                <p>${artist.roles}</p>
+                <p>${artist.shortDescription}</p>
+                <a href=${artist.website}></a>
+                <p>Favortie Artist</p>
                  <div class="btns">
                     <button class="btn-update-user">Update</button>
                     <button class="btn-delete-user">Delete</button>
                 </div>
             </article>
-        `)
+        `
+        );
         // );
         // document.querySelector("#users-grid article:last-child .btn-delete-user").addEventListener("click", () => deleteUser(user.id));
         // document.querySelector("#users-grid article:last-child .btn-update-user").addEventListener("click", () => selectUser(user));
