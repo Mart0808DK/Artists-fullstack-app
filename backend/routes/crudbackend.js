@@ -57,7 +57,7 @@ export async function updateArtistId(req, res) {
     updatedArtist.roles = req.body.roles;
     updatedArtist.shortDescription = req.body.shortDescription;
 
-    await WriteArtistsToDataBase(artist, "../data/artists.json");
+    await WriteArtistsToDataBase("../data/artists.json", artist);
 
     res.json(artist);
 }

@@ -1,3 +1,5 @@
+import { selectArtist } from "./crudfrontend.js";
+
 // Create HTML and display all users from given list
 export function showArtists(artists) {
     // reset <section id="users-grid" class="grid-container">...</section>
@@ -19,14 +21,14 @@ export function showArtists(artists) {
                 <a href=${artist.website}></a>
                 <p>Favortie Artist</p>
                  <div class="btns">
-                    <button class="btn-update-user">Update</button>
-                    <button class="btn-delete-user">Delete</button>
+                    <button class="btn-update-artist">Update</button>
+                    <button class="btn-delete-artist">Delete</button>
                 </div>
             </article>
         `
         );
         // );
         // document.querySelector("#users-grid article:last-child .btn-delete-user").addEventListener("click", () => deleteUser(user.id));
-        // document.querySelector("#users-grid article:last-child .btn-update-user").addEventListener("click", () => selectUser(user));
+        document.querySelector("#artists-grid article:last-child .btn-update-artist").addEventListener("click", () => selectArtist(artist));
     }
 }
