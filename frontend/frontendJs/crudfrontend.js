@@ -84,19 +84,18 @@ export async function updatedArtists(event) {
     }
 }
 
-// // ================== DELETE ============ //
-// async function deleteUser(id) {
-//     const response = await fetch(`${endpoint}/artists/${id}`, {
-//         method: "DELETE",
-//     });
-//     if (response.ok) {
-//         // if success, update the users grid
-//         updateUsersGrid();
-//     }
-// }
+// ================== DELETE ============ //
+export async function deleteArtist(artist) {
+    const id = artist.id
+    const response = await fetch(`${endpoint}/artists/${id}`, {
+        method: "DELETE",
+    });
+    if (response.ok) {
+        // if success, update the users grid
+        updateUsersGrid();
+    } else {
+        console.Error(404);
+    }
 
-// // ================== Events ============ //
+}
 
-// function scrollToTop() {
-//     window.scrollTo({ top: 0, behavior: "smooth" });
-// }

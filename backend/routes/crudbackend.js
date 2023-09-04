@@ -65,7 +65,7 @@ export async function updateArtistId(req, res) {
 export async function deleteArtistId(req, res) {
     const id = req.params.id;
     const artist = await getArtists("../data/artists.json");
-    const updatedArtists = artist.filter(artist => artist.id !== id);
-    WriteArtistsToDataBase(updatedArtists, "../data/artists.json");
-    res.json(updatedArtists);
+    const deletedArtists = artist.filter(artist => artist.id !== id);
+    WriteArtistsToDataBase("../data/artists.json", deletedArtists);
+    res.json(deletedArtists);
 }

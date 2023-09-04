@@ -1,4 +1,4 @@
-import { selectArtist } from "./crudfrontend.js";
+import { deleteArtist, selectArtist } from "./crudfrontend.js";
 
 // Create HTML and display all users from given list
 export function showArtists(artists) {
@@ -28,7 +28,7 @@ export function showArtists(artists) {
         `
         );
         // );
-        // document.querySelector("#users-grid article:last-child .btn-delete-user").addEventListener("click", () => deleteUser(user.id));
+        document.querySelector("#artists-grid article:last-child .btn-delete-artist").addEventListener("click", () => deleteArtist(artist));
         document.querySelector("#artists-grid article:last-child .btn-update-artist").addEventListener("click", () => selectArtist(artist));
     }
 }
