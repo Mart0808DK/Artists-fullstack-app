@@ -2,18 +2,21 @@ import { endpoint } from "./fetch.js";
 import { updateArtistGrid } from "./fetch.js";
 // ============ CREATE ============ //
 // Create (POST) user to Firebase (Database) using REST API
-async function createArtists(event) {
+export async function createArtists(event) {
     event.preventDefault();
     const name = event.target.name.value;
     const birthdate = event.target.birthdate.value;
     const activeSince = event.target.activeSince.value;
-    const genres = event.target.genres.value.split(", ");
-    const labels = event.target.labels.value.split(", ");
+    const genres = event.target.genres.value;
+    const labels = event.target.labels.value;
     const website = event.target.website.value;
     const image = event.target.image.value;
-    const roles = event.target.roles.value.split(", ");
+    const roles = event.target.roles.value;
     const shortDescription = event.target.shortDescription.value;
-    const favorites = event.target.favorites.value === "true";
+    const favorites = event.target.favorites.checked;
+
+    const newArtist = { name, birthdate, activeSince, genres, labels, website, image, roles, shortDescription, favorites };
+    const artistAsJson = JSON.stringify(newArtist);
     const response = await fetch(`${endpoint}/artists`, {
         method: "POST",
         body: artistAsJson,
@@ -24,7 +27,7 @@ async function createArtists(event) {
     if (response.ok) {
         updateArtistGrid();
     } else {
-        console.error(404)
+        console.error(404);
     }
 }
 

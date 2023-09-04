@@ -1,9 +1,9 @@
-import { updateArtistGrid } from "./fetch.js";
+import { artists, updateArtistGrid } from "./fetch.js";
+import { setEventlistner } from "./setEventlistner.js";
 // ============ GLOBAL VARIABELS ============ //
 
 // const endpoint =
 //     "https://race-dat-v2-default-rtdb.europe-west1.firebasedatabase.app";
-let selectedUser;
 
 
 // ============ INIT APP ============ //
@@ -11,7 +11,8 @@ let selectedUser;
 window.addEventListener("load", main);
 
 function main() {
-    updateArtistGrid(); // to initialize the grid view with users
+    updateArtistGrid();
+    setEventlistner(); // to initialize the grid view with users
     // event listeners
     //     document.querySelector("#form-create").addEventListener("submit", createUser);
     //     document.querySelector("#form-update").addEventListener("submit", updateUser);

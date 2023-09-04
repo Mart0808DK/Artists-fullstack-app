@@ -26,7 +26,7 @@ export async function postArtistsData(req, res) {
     const id = String(new Date().getTime());
     newArtist.id = id;
     artists.push(newArtist);
-    await WriteArtistsToDataBase(artists, "../data/artists.json");
+    await WriteArtistsToDataBase("../data/artists.json", artists);
 
     res.json(artists);
 }

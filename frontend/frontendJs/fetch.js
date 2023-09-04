@@ -5,6 +5,7 @@ export let artists = [];
 export async function updateArtistGrid() {
     artists = await readArtists();
     showArtists(artists);
+    console.log(artists);
 }
 
 async function readArtists() {

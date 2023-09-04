@@ -45,7 +45,7 @@
             <section id="artists-grid" class="grid-container"></section>
         </div>
 
-        <dialog>
+        <dialog id="artists-create-dialog">
             <form action="" id="form-create">
                 <h2>Add Artist</h2>
                  <label for="name-create">Name</label>
@@ -66,12 +66,14 @@
                     <input type="url" name="website" id="website-create-form">
                     <label for="image-create-form">Image URL</label>
                     <input type="url" name="image" id="image-create-form">
+                    <label for="favorites-create-form">Favorites</label>
+                    <input type="checkbox" name="favorites" id="favorites-create-form">
                 <button>Create Artist</button>
                 <button type="reset">Clear</button>
+                <button type="close">Close Dialog</button>
             </form>
         </dialog>
-
-        <dialog>
+        <dialog id="artists-update-artists">
             <form action="" id="form-update">
                 <h2>Update Artist</h2>
                  <label for="name-update">Name</label>
