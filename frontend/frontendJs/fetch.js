@@ -1,5 +1,5 @@
 import { showArtists } from "./showArtistsList.js";
-const endpoint = "http://localhost:5000";
+export const endpoint = "http://localhost:5000";
 export let artists = [];
 
 export async function updateArtistGrid() {
