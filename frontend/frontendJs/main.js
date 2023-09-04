@@ -1,8 +1,10 @@
+import { updateArtistGrid } from "./fetch.js";
 // ============ GLOBAL VARIABELS ============ //
-const endpoint = "http://localhost:5000";
+
 // const endpoint =
 //     "https://race-dat-v2-default-rtdb.europe-west1.firebasedatabase.app";
 let selectedUser;
+
 
 // ============ INIT APP ============ //
 
@@ -17,54 +19,12 @@ function main() {
 
 // ============ READ ============ //
 
-let artists = [];
 
-async function updateArtistGrid() {
-    artists = await readArtists();
-    console.log(artists);
-    // displayUsers(artists);
-}
+
 
 // Read (GET) all users from Firebase (Database) using REST API
-async function readArtists() {
-    const response = await fetch(`${endpoint}/artists`);
-    const data = await response.json();
-    // const users = Object.keys(data).map(key => ({ id: key, ...data[key] })); // from object to array
-    return data;
-}
 
-// Create HTML and display all users from given list
-// function showArtists(artists) {
-//     // reset <section id="users-grid" class="grid-container">...</section>
-//     document.querySelector("#artists-grid").innerHTML = "";
-//     //loop through all users and create an article with content for each
-//     for (const artist of artists) {
-//         document.querySelector("#artists-grid").insertAdjacentHTML(
-//             "beforeend",
-//             /*html*/ `
-//             <article>
-//                 <img src="${artist.image}">
-//                 <h3>${artist.name}</h3>
-//                 <p>${artist.birthdate}</p>
-//                 <p>${artist.activeSince}</p>
-//                 <i>${artist.genres}</i>
-//                 <p>${artist.labels}</p>
-//                 <p>${artist.roles}</p>
-//                 <p>${artist.shortDescription}</p>
-//                 <a href=${artist.website}></a>
-//                 <p>Favortie Artist</p>
-//                  <div class="btns">
-//                     <button class="btn-update-user">Update</button>
-//                     <button class="btn-delete-user">Delete</button>
-//                 </div>
-//             </article>
-//         `
-//         );
-//         // );
-//         // document.querySelector("#users-grid article:last-child .btn-delete-user").addEventListener("click", () => deleteUser(user.id));
-//         // document.querySelector("#users-grid article:last-child .btn-update-user").addEventListener("click", () => selectUser(user));
-//     }
-// }
+
 
 // ============ CREATE ============ //
 // Create (POST) user to Firebase (Database) using REST API
