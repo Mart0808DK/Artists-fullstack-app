@@ -1,23 +1,26 @@
 import { artists } from "./fetch.js";
 import { updateArtistGrid } from "./fetch.js";
+import { showArtists } from "./showArtistsList.js";
 
 export function sortArtists() {
     const option = document.querySelector("#artist-sort");
-    console.log("Den kommer her ind");
 
     if (option.value === "name-ascending") {
         console.log(option.value);
-        artists.toSorted((a, b) => a.name.localeCompare(b.name));
+        const sortedArtist = artists.sort((a, b) => a.name.localeCompare(b.name));
+        showArtists(sortedArtist)
     } else if (option.value === "name-decending") {
         console.log(option.value);
-        artists.toSorted((a, b) => b.name.localeCompare(a.name));
+        const sortedArtist = artists.sort((a, b) => b.name.localeCompare(a.name));
+        showArtists(sortedArtist);
     } else if (option.value === "active-since-ascending") {
         console.log(option.value);
-        artists.toSorted((a, b) => a.activeSince.localeCompare(b.activeSince));
+        const sortedArtist = artists.sort((a, b) => a.activeSince.localeCompare(b.activeSince));
+        showArtists(sortedArtist);
     } else if (option.value === "active-since-decending") {
         console.log(option.value);
-        artists.toSorted((a, b) => b.activeSince.localeCompare(a.activeSince));
+        const sortedArtist = artists.sort((a, b) => b.activeSince.localeCompare(a.activeSince));
+        showArtists(sortedArtist);
     }
 
-    updateArtistGrid();
 }
