@@ -63,6 +63,18 @@ export async function updateArtistId(req, res) {
     res.json(artist);
 }
 
+export async function patchArtistsId(req, res) {
+    const id = req.params.id;
+    const artist = await getArtists("../data/artists.json");
+    const patchArtist = artist.find(artists => artists.id === id);
+
+    patchArtist.favorites = req.body.favorites;
+
+    await WriteArtistsToDataBase("../data/artists.json", artist);
+
+    res.json(artist)
+}
+
 export async function deleteArtistId(req, res) {
     const id = req.params.id;
     const artist = await getArtists("../data/artists.json");

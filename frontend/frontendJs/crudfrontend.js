@@ -99,6 +99,27 @@ export async function updatedArtists(event) {
     }
 }
 
+export async function patchArtist(event) {
+    event.preventDefault();
+    const favorites = event.target.favorites.checked
+
+    const patchArtist = {favorites}
+    const artistAsJson = JSON.stringify(patchArtist)
+    const response = await fetch(`${endpoint}/artists/${selectArtists.id}`, {
+        method: "PATCH",
+        body: artistAsJson,
+        headers: {
+            "Content-Type": "application/json",
+        },
+    })
+    if (response.ok) {
+        artists = await response.json();
+        updateArtistGrid();
+    } else {
+        console.error(404)
+    }
+}
+
 // ================== DELETE ============ //
 export async function deleteArtist(artist) {
     const id = artist.id;
