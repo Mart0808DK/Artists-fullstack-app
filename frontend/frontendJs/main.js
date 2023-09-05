@@ -1,4 +1,4 @@
-import { artists, updateArtistGrid } from "./fetch.js";
+import { updateArtistGrid } from "./crudfrontend.js";
 import { setEventlistner } from "./setEventlistner.js";
 // ============ GLOBAL VARIABELS ============ //
 

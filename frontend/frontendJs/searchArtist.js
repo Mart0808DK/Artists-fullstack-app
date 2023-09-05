@@ -1,4 +1,4 @@
-import { artists } from "./fetch.js"
+import { artists } from "./crudfrontend.js"
 import { showArtists } from "./showArtistsList.js";
 
 

@@ -1,5 +1,4 @@
-import { artists } from "./fetch.js";
-import { updateArtistGrid } from "./fetch.js";
+import { artists } from "./crudfrontend.js";
 import { showArtists } from "./showArtistsList.js";
 
 export function sortArtists() {

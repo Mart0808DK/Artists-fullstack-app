@@ -1,6 +1,6 @@
-import { artists } from "./fetch.js";
-import { deleteArtist, selectArtist } from "./crudfrontend.js";
-import { updateArtistGrid } from "./fetch.js";
+import { artists } from "./crudfrontend.js";
+// import { deleteArtist, selectArtist } from "./crudfrontend.js";
+import { updateArtistGrid } from "./crudfrontend.js";
 
 export function favoriteArtist(event, artist) {
     if (event.target.checked) {

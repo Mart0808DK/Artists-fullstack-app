@@ -1,8 +1,23 @@
-import { endpoint } from "./fetch.js";
-import { updateArtistGrid } from "./fetch.js";
 import { updateDialog } from "./setEventlistner.js";
+import { showArtists } from "./showArtistsList.js";
 
 let selectArtists;
+
+const endpoint = "http://localhost:5000";
+export let artists = [];
+
+export async function updateArtistGrid() {
+    artists = await readArtists();
+    showArtists(artists);
+    console.log(artists);
+}
+
+async function readArtists() {
+    const response = await fetch(`${endpoint}/artists`);
+    const data = await response.json();
+    // const users = Object.keys(data).map(key => ({ id: key, ...data[key] })); // from object to array
+    return data;
+}
 
 // ============ CREATE ============ //
 // Create (POST) user to Firebase (Database) using REST API
@@ -29,6 +44,7 @@ export async function createArtists(event) {
         },
     });
     if (response.ok) {
+        artists = await response.json();
         updateArtistGrid();
     } else {
         console.error(404);
@@ -39,7 +55,7 @@ export async function createArtists(event) {
 export function selectArtist(artist) {
     // Set global varaiable
     updateDialog();
-    selectArtists = artist 
+    selectArtists = artist;
     const form = document.querySelector("#form-update");
     form.name.value = artist.name;
     form.birthdate.value = artist.birthdate;
@@ -51,8 +67,6 @@ export function selectArtist(artist) {
     form.roles.value = artist.roles;
     form.shortDescription.value = artist.shortDescription;
     form.favorites.value = artist.favorites;
-
-    
 }
 
 export async function updatedArtists(event) {
@@ -78,6 +92,7 @@ export async function updatedArtists(event) {
         },
     });
     if (response.ok) {
+        artists = await response.json();
         updateArtistGrid();
     } else {
         console.error(404);
@@ -86,16 +101,14 @@ export async function updatedArtists(event) {
 
 // ================== DELETE ============ //
 export async function deleteArtist(artist) {
-    const id = artist.id
+    const id = artist.id;
     const response = await fetch(`${endpoint}/artists/${id}`, {
         method: "DELETE",
     });
     if (response.ok) {
-        // if success, update the users grid
+        artists = await response.json();
         updateUsersGrid();
     } else {
         console.Error(404);
     }
-
 }
-
