@@ -1,4 +1,5 @@
 import { deleteArtist, selectArtist } from "./crudfrontend.js";
+import { favoriteArtist } from "./favoriteArtists.js";
 
 // Create HTML and display all users from given list
 export function showArtists(artists) {
@@ -21,6 +22,8 @@ export function showArtists(artists) {
                 <a href=${artist.website}></a>
                 <p>Favortie Artist</p>
                  <div class="btns">
+                 <label for="favorites">Favorites</label>
+                 <input type="checkbox" name="favorites" class="favorites-checkbox">
                     <button class="btn-update-artist">Update</button>
                     <button class="btn-delete-artist">Delete</button>
                 </div>
@@ -30,5 +33,6 @@ export function showArtists(artists) {
         // );
         document.querySelector("#artists-grid article:last-child .btn-delete-artist").addEventListener("click", () => deleteArtist(artist));
         document.querySelector("#artists-grid article:last-child .btn-update-artist").addEventListener("click", () => selectArtist(artist));
+        document.querySelector("#artists-grid article:last-child .favorites-checkbox").addEventListener("click", event => favoriteArtist(event, artist));
     }
 }

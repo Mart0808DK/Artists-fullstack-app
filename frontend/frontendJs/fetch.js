@@ -1,3 +1,4 @@
+import { favoriteArtist } from "./favoriteArtists.js";
 import { showArtists } from "./showArtistsList.js";
 export const endpoint = "http://localhost:5000";
 export let artists = [];
