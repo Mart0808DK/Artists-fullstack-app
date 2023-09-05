@@ -1,0 +1,132 @@
+/* Artist Grid Styles / */
+#artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  justify-items: center;
+}
+
+#artists-grid article {
+  background-color: #ff8260;
+  border: 1px solid #151414;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+#artists-grid article:hover {
+  transform: scale(1.05);
+}
+
+#artists-grid img {
+  overflow: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* / Animation for Checkbox / */
+.favorites-create-chechbox:checked + label::before {
+  content: "\2713";
+  display: inline-block;
+  font-size: 18px;
+  color: green;
+  animation: checkbox-check 0.3s ease-in-out;
+}
+
+@keyframes checkbox-check {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* / Add some padding to the buttons / */
+.btns button {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #240041;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.btns button:hover {
+  background-color: #4a1674;
+}
+
+.btn-update-artists,
+.btn-delete-artists {
+    background-color: #ff4500;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* / Style the search and sort section / */
+#search-artists {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+#search-artists div {
+  flex: 1;
+  margin-right: 10px;
+}
+
+/* / Other general styles / */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #900048;
+}
+
+header {
+  background-color: #ff4057;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+}
+
+footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* / Dialog styles / */
+dialog {
+  border: none;
+  padding: 20px;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+/* / Toast message styles */
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}

@@ -412,31 +412,5 @@
     ],
     "shortDescription": "Led Zeppelin's golden voice",
     "favorites": false
-  },
-  {
-    "name": "Viktor ",
-    "birthdate": "",
-    "activeSince": "",
-    "genres": "",
-    "labels": "FFAEW",
-    "website": "",
-    "image": "",
-    "roles": "",
-    "shortDescription": "EFFEWE",
-    "favorites": false,
-    "id": "1693830846166"
-  },
-  {
-    "name": "Martin",
-    "birthdate": "",
-    "activeSince": "",
-    "genres": "",
-    "labels": "",
-    "website": "",
-    "image": "",
-    "roles": "",
-    "shortDescription": "",
-    "favorites": true,
-    "id": "1693835812228"
   }
 ]
