@@ -34,7 +34,7 @@
       "Songwriter"
     ],
     "shortDescription": "Guitar virtuoso and rock icon",
-    "favorites": false
+    "favorites": true
   },
   {
     "id": "03",
@@ -436,7 +436,7 @@
     "image": "",
     "roles": "",
     "shortDescription": "",
-    "favorites": false,
+    "favorites": true,
     "id": "1693835812228"
   }
 ]

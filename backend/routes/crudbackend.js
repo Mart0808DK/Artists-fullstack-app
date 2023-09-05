@@ -56,23 +56,34 @@ export async function updateArtistId(req, res) {
     updatedArtist.image = req.body.image;
     updatedArtist.roles = req.body.roles;
     updatedArtist.shortDescription = req.body.shortDescription;
-    updatedArtist.favorites = req.body.favorites
+    updatedArtist.favorites = req.body.favorites;
 
     await WriteArtistsToDataBase("../data/artists.json", artist);
 
     res.json(artist);
 }
 
-export async function patchArtistsId(req, res) {
-    const id = req.params.id;
-    const artist = await getArtists("../data/artists.json");
-    const patchArtist = artist.find(artists => artists.id === id);
+export async function patchArtistId(req, res) {
+    const id = req.params.id.toString();
+    try {
+        const artists = await getArtists("../data/artists.json");
+        const updatedArtist = artists.find(artist => artist.id === id);
 
-    patchArtist.favorites = req.body.favorites;
+        if (!updatedArtist) {
+            return res.status(404).json({ error: "Artist not found" });
+        }
 
-    await WriteArtistsToDataBase("../data/artists.json", artist);
-
-    res.json(artist)
+        if (req.body.hasOwnProperty("favorites")) {
+            updatedArtist.favorites = req.body.favorites;
+            await WriteArtistsToDataBase("../data/artists.json", artists);
+            res.json(updatedArtist);
+        } else {
+            res.status(400).json({ error: 'Bad request. "favorites" property missing in the request body.' });
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal server error" });
+    }
 }
 
 export async function deleteArtistId(req, res) {

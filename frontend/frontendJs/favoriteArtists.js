@@ -1,20 +1,17 @@
 import { artists } from "./crudfrontend.js";
-// import { deleteArtist, selectArtist } from "./crudfrontend.js";
+import { patchArtist } from "./crudfrontend.js";
 import { updateArtistGrid } from "./crudfrontend.js";
 
 export function favoriteArtist(event, artist) {
-    if (event.target.checked) {
-        artist.favorites = true;
-    } else {
-        artist.favorites = false;
-    }
+    artist.favorites = event.target.checked;
+    patchArtist(artist);
     console.log(artists);
 }
 
 export function showFavorits() {
     const checkbox = document.querySelector("#filter-fav").checked;
     if (checkbox === true) {
-        const filteredArtists = artists.slice().filter(artists => artists.favorites === true);
+        const filteredArtists = artists.slice().filter(artist => artist.favorites === true);
         showFavoriteArtists(filteredArtists);
     } else {
         updateArtistGrid();
@@ -26,10 +23,9 @@ function showFavoriteArtists(filteredArtists) {
     document.querySelector("#artists-grid").innerHTML = "";
     //loop through all users and create an article with content for each
     for (const artist of filteredArtists) {
-        if (artist.favorites) {
-            document.querySelector("#artists-grid").insertAdjacentHTML(
-                "beforeend",
-                /*html*/ `
+        document.querySelector("#artists-grid").insertAdjacentHTML(
+            "beforeend",
+            /*html*/ `
             <article>
                 <img src="${artist.image}">
                 <h3>${artist.name}</h3>
@@ -43,14 +39,11 @@ function showFavoriteArtists(filteredArtists) {
                 <p>Favortie Artist</p>
                  <div class="btns">
                  <label for="favorites">Favorites</label>
-                 <input type="checkbox" name="favorites" id="favorites-checkbox">
-                    <button class="btn-update-artist">Update</button>
-                    <button class="btn-delete-artist">Delete</button>
+                 <input type="checkbox" name="favorites" class="favorites-chechbox" ${artist.favorites ? "checked" : ""}>
                 </div>
             </article>
         `
-            );
-            document.querySelector("#artists-grid article:last-child #favorites-checkbox").addEventListener("click", favoriteArtist);
-        }
+        );
+        document.querySelector("#artists-grid article:last-child .favorites-chechbox").addEventListener("click", event => favoriteArtist(event, artist));
     }
 }

@@ -99,27 +99,31 @@ export async function updatedArtists(event) {
     }
 }
 
-export async function patchArtist(event) {
-    event.preventDefault();
-    const favorites = event.target.favorites.checked
+export async function patchArtist(artist) {
+    if (!artist || !artist.id) {
+        console.error("Artist or artist ID is undefined.");
+        return;
+    }
 
-    const patchArtist = {favorites}
-    const artistAsJson = JSON.stringify(patchArtist)
-    const response = await fetch(`${endpoint}/artists/${selectArtists.id}`, {
+    const favorites = artist.favorites;
+    const patchArtist = { favorites };
+    const patchArtistAsJson = JSON.stringify(patchArtist);
+
+    const response = await fetch(`${endpoint}/artists/${artist.id}`, {
         method: "PATCH",
-        body: artistAsJson,
+        body: patchArtistAsJson,
         headers: {
             "Content-Type": "application/json",
         },
-    })
+    });
+
     if (response.ok) {
         artists = await response.json();
         updateArtistGrid();
     } else {
-        console.error(404)
+        console.error(response.status);
     }
 }
-
 // ================== DELETE ============ //
 export async function deleteArtist(artist) {
     const id = artist.id;

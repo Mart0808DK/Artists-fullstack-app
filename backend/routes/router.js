@@ -5,7 +5,7 @@ import { postArtistsData } from "./crudbackend.js";
 import { getArtistsDataId } from "./crudbackend.js";
 import { updateArtistId } from "./crudbackend.js";
 import { deleteArtistId } from "./crudbackend.js";
-import { patchArtistsId } from "./crudbackend.js";
+import { patchArtistId } from "./crudbackend.js";
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.post("/artists", postArtistsData);
 
 app.get("artists/:id", getArtistsDataId);
 
-app.patch("artists/:id", patchArtistsId)
+app.patch("/artists/:id", patchArtistId);
 
 app.put("/artists/:id", updateArtistId);
 
