@@ -1,4 +1,5 @@
 import { artists } from "./fetch.js";
+import { deleteArtist, selectArtist } from "./crudfrontend.js";
 import { updateArtistGrid } from "./fetch.js";
 
 export function favoriteArtist(event, artist) {
@@ -10,11 +11,21 @@ export function favoriteArtist(event, artist) {
     console.log(artists);
 }
 
-export function showFavoriteArtists(artists) {
+export function showFavorits() {
+    const checkbox = document.querySelector("#filter-fav").checked;
+    if (checkbox === true) {
+        const filteredArtists = artists.slice().filter(artists => artists.favorites === true);
+        showFavoriteArtists(filteredArtists);
+    } else {
+        updateArtistGrid();
+    }
+}
+
+function showFavoriteArtists(filteredArtists) {
     // reset <section id="users-grid" class="grid-container">...</section>
     document.querySelector("#artists-grid").innerHTML = "";
     //loop through all users and create an article with content for each
-    for (const artist of artists) {
+    for (const artist of filteredArtists) {
         if (artist.favorites) {
             document.querySelector("#artists-grid").insertAdjacentHTML(
                 "beforeend",
@@ -39,9 +50,6 @@ export function showFavoriteArtists(artists) {
             </article>
         `
             );
-            // );
-            document.querySelector("#artists-grid article:last-child .btn-delete-artist").addEventListener("click", () => deleteArtist(artist));
-            document.querySelector("#artists-grid article:last-child .btn-update-artist").addEventListener("click", () => selectArtist(artist));
             document.querySelector("#artists-grid article:last-child #favorites-checkbox").addEventListener("click", favoriteArtist);
         }
     }

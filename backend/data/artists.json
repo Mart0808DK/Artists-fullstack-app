@@ -4,23 +4,11 @@
     "name": "David Bowie",
     "birthdate": "1947-01-08",
     "activeSince": "1962-07-15",
-    "genres": [
-      "Rock",
-      "Pop",
-      "Experimental"
-    ],
-    "labels": [
-      "RCA Records",
-      "EMI",
-      "Columbia Records"
-    ],
+    "genres": "Rock,Pop,Experimental",
+    "labels": "RCA Records,EMI,Columbia Records",
     "website": "https://www.davidbowie.com/",
     "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/David_Bowie_-_TopPop_1974_03.png",
-    "roles": [
-      "Singer",
-      "Songwriter",
-      "Actor"
-    ],
+    "roles": "Singer,Songwriter,Actor",
     "shortDescription": "Iconic musician and actor",
     "favorites": false
   },
@@ -59,7 +47,7 @@
     "image": "https://live.staticflickr.com/3401/3479284116_3a70e29a02_c.jpg",
     "roles": "Singer,Songwriter,Pianist",
     "shortDescription": "Legendary frontman of Queen",
-    "favorites": true
+    "favorites": false
   },
   {
     "id": "04",
@@ -95,7 +83,7 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/5/51/Jimmy_Page_early.jpg",
     "roles": "Guitarist,Songwriter,Producer",
     "shortDescription": "Led Zeppelin guitarist",
-    "favorites": true
+    "favorites": false
   },
   {
     "id": "06",

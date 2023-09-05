@@ -2,11 +2,12 @@ import { createArtists } from "./crudfrontend.js";
 import { updatedArtists } from "./crudfrontend.js";
 import { sortArtists } from "./sortArtists.js";
 import { searchArtistInput } from "./searchArtist.js";
-import { favoriteArtist } from "./favoriteArtists.js";
+import { favoriteArtist, showFavorits } from "./favoriteArtists.js";
 // document.querySelector("#form-update").addEventListener("click", updateDialog);
 
 export function setEventlistner() {
-    document.querySelector("#filter-fav").addEventListener("click", favoriteArtist);
+    document.querySelector(".favorites-checkbox").addEventListener("click", favoriteArtist);
+    document.querySelector("#filter-fav").addEventListener("click", showFavorits);
     document.querySelector("#artist-search").addEventListener("search", searchArtistInput);
     document.querySelector("#artist-search").addEventListener("keyup", searchArtistInput);
     document.querySelector("#create-artist").addEventListener("click", createDialog);
