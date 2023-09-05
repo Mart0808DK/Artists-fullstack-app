@@ -34,7 +34,7 @@
       "Songwriter"
     ],
     "shortDescription": "Guitar virtuoso and rock icon",
-    "favorites": true
+    "favorites": false
   },
   {
     "id": "03",
@@ -193,7 +193,7 @@
       "Eagles Records"
     ],
     "website": "https://www.joewalsh.com/",
-    "image": "https://upload.wikimedia.org/w",
+    "image": "https://i0.wp.com/www.steelydan.nl/images/JoeWalsh.jpg",
     "roles": [
       "Guitarist",
       "Singer",
