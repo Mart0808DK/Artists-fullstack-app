@@ -45,6 +45,20 @@
 }
 
 /* / Add some padding to the buttons / */
+
+#create-artist {
+  background-color: #4a1674;
+  font-weight: bolder;
+  font-size: medium;
+  padding: 10px;
+  width: 15%;
+  border-radius: 1em;
+}
+
+#create-artist:hover {
+  background-color: #6d349b;
+}
+
 .btns button {
   display: flex;
   align-items: center;
@@ -75,15 +89,35 @@
 /* / Style the search and sort section / */
 #search-artists {
   display: flex;
+  align-content: center;
   justify-content: space-between;
   margin: 20px;
 }
 
-#search-artists div {
-  flex: 1;
-  margin-right: 10px;
+#artist-search {
+  background-color: rgb(234, 217, 194);
+  padding: 10px;
+  width: 70%;
+  border-radius: 1em;
 }
 
+#artist-sort {
+  background-color: rgb(234, 217, 194);
+  text-align: left;
+  padding: 10px;
+  width: 70%;
+  border-radius: 1em;
+}
+
+#filter-fav {
+  accent-color: #4a1674;
+  display: flex;
+  margin-left: 0;
+  padding: 100px;
+  height: 30px;
+  width: 130px;
+
+}
 /* / Other general styles / */
 body {
   font-family: Arial, sans-serif;
@@ -98,6 +132,7 @@ header {
 }
 
 header h1 {
+  font-weight: bolder;
   margin: 0;
   color: black
 }
