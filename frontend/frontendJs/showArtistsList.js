@@ -1,11 +1,9 @@
 import { selectArtistDelete, selectArtist } from "./crudfrontend.js";
 import { favoriteArtist } from "./favoriteArtists.js";
 
-// Create HTML and display all users from given list
+// funktion der viser artister med dom manipulation 
 export function showArtists(artists) {
-    // reset <section id="users-grid" class="grid-container">...</section>
     document.querySelector("#artists-grid").innerHTML = "";
-    //loop through all users and create an article with content for each
     for (const artist of artists) {
         document.querySelector("#artists-grid").insertAdjacentHTML(
             "beforeend",

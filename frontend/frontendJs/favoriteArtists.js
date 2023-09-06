@@ -2,12 +2,14 @@ import { artists } from "./crudfrontend.js";
 import { patchArtist } from "./crudfrontend.js";
 import { updateArtistGrid } from "./crudfrontend.js";
 
+// funktin der sætter favorite property til ture/false i artist.json ved hjælp af patchArtist funktion og logger som sikring i consolen 
 export function favoriteArtist(event, artist) {
     artist.favorites = event.target.checked;
     patchArtist(artist);
     console.log(artists);
 }
 
+// funktion der gør det muligt kun og vise favorite artist ved hjælp af slice og filter metode
 export function showFavorits() {
     const checkbox = document.querySelector("#filter-fav").checked;
     if (checkbox === true) {
@@ -18,6 +20,7 @@ export function showFavorits() {
     }
 }
 
+// funktion der viser favorite aritst
 function showFavoriteArtists(filteredArtists) {
     // reset <section id="users-grid" class="grid-container">...</section>
     document.querySelector("#artists-grid").innerHTML = "";

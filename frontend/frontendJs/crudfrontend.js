@@ -3,24 +3,27 @@ import { showArtists } from "./showArtistsList.js";
 
 let selectArtists;
 
+// sætter min endpoint til det sted hvor jeg skal fetch fra
 const endpoint = "http://localhost:5000";
+
+// variable der sætter min artist.json data i et arr for at kunne bruge dem flere steder i min kode 
 export let artists = [];
 
+//funktion der updatere min grid på min index.html for hver gang jeg laver en crud, sort eller filter aktion og viser mine artiste på index.html
 export async function updateArtistGrid() {
     artists = await readArtists();
     showArtists(artists);
     console.log(artists);
 }
-
+// funktion der fetch mine artister
 async function readArtists() {
     const response = await fetch(`${endpoint}/artists`);
     const data = await response.json();
-    // const users = Object.keys(data).map(key => ({ id: key, ...data[key] })); // from object to array
     return data;
 }
 
 // ============ CREATE ============ //
-// Create (POST) user to Firebase (Database) using REST API
+// funktion der opretter den ny artist ved hjælp af formen og sender et POST Req til databasem 
 export async function createArtists(event) {
     event.preventDefault();
     const name = event.target.name.value;
@@ -52,8 +55,8 @@ export async function createArtists(event) {
 }
 
 // // ============ UPDATE ============ //
+// funktion der finder en specifik artist til at hjælpe update artist funktion til at få den rigtige artist
 export function selectArtist(artist) {
-    // Set global varaiable
     updateDialog();
     selectArtists = artist;
     const form = document.querySelector("#form-update");
@@ -68,7 +71,7 @@ export function selectArtist(artist) {
     form.shortDescription.value = artist.shortDescription;
     form.favorites.value = artist.favorites;
 }
-
+// funktion der updatere den specifikke artist og sender et PUT Req
 export async function updatedArtists(event) {
     event.preventDefault();
     const name = event.target.name.value;
@@ -98,7 +101,7 @@ export async function updatedArtists(event) {
         console.error(404);
     }
 }
-
+// funktion der kun updatere favorites propertien og sender et PATCH Req 
 export async function patchArtist(artist) {
     if (!artist || !artist.id) {
         console.error("Artist or artist ID is undefined.");
@@ -126,12 +129,13 @@ export async function patchArtist(artist) {
 }
 // ================== DELETE ============ //
 
+// funktion bruger jeg til at vælge den rigtig at slette når jeg skal slette min artist i min delete artist dialog i min index.html
 export function selectArtistDelete(artist) {
-    // Set global varaiable
     deleteDialog();
     selectArtists = artist;;
 }
 
+// funktion der sletter de specifikke artist og sender et DELETE Req 
 export async function deleteArtist() {
     const response = await fetch(`${endpoint}/artists/${selectArtists.id}`, {
         method: "DELETE",

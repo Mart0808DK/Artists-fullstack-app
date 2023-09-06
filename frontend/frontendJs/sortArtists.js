@@ -1,6 +1,8 @@
 import { artists } from "./crudfrontend.js";
 import { showArtists } from "./showArtistsList.js";
 
+
+// funktion der sortere artister på det given mulig i drop down menuen 
 export function sortArtists() {
     const option = document.querySelector("#artist-sort");
 

@@ -1,25 +1,20 @@
 import fs from "fs/promises";
 
-// const app = express();
-
-// app.use(express.json());
-
-//------------------------------------ Helper functions
-
+// funktion der sætter den rigtige sti hvor filen skal læses fra og returnere data med JSON.parse som en string
 async function getArtists(path) {
     const data = await fs.readFile(path);
     return JSON.parse(String(data));
 }
-
+// funktion der er en hjælpe funktion der skriver data ud fra den rigtige sti og arr 
 async function WriteArtistsToDataBase(path, artistArr) {
     fs.writeFile(path, JSON.stringify(artistArr, null, 2));
 }
-
+// funktion henter artist.json i min CRUD backend
 export async function getArtistsData(req, res) {
     const artist = await getArtists("../data/artists.json");
     res.json(artist);
 }
-
+// funktion der laver ny json data ud fra push metode til min artist.json og skriver til databasen 
 export async function postArtistsData(req, res) {
     const artists = await getArtists("../data/artists.json");
     const newArtist = req.body;
@@ -30,7 +25,7 @@ export async function postArtistsData(req, res) {
 
     res.json(artists);
 }
-
+// funktion der henter artist.json med via et specifik id find metode
 export async function getArtistsDataId(req, res) {
     const id = req.params.id;
     const artist = await getArtists("../data/artists.json");
@@ -41,7 +36,7 @@ export async function getArtistsDataId(req, res) {
         res.status(404).json("Artists not Found");
     }
 }
-
+// funktion der updatere artist.json med et specifik id for at kunne updatere en artist af gangen, ved brug af find metode 
 export async function updateArtistId(req, res) {
     const id = req.params.id;
     const artist = await getArtists("../data/artists.json");
@@ -62,7 +57,7 @@ export async function updateArtistId(req, res) {
 
     res.json(artist);
 }
-
+// funktion der updatere artist.json favortie property værdi med brug af find metode så der ikke overskriver andre værdier, har brugt try og catch for at værre sikker at teste koden enden den bliver PATCHe
 export async function patchArtistId(req, res) {
     const id = req.params.id.toString();
     try {
@@ -85,7 +80,7 @@ export async function patchArtistId(req, res) {
         res.status(500).json({ error: "Internal server error" });
     }
 }
-
+// funktion der sletter en specifik artist med et specifik id ved brug af filter metoder 
 export async function deleteArtistId(req, res) {
     const id = req.params.id;
     const artist = await getArtists("../data/artists.json");
