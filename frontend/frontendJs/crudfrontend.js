@@ -1,4 +1,4 @@
-import { updateDialog } from "./setEventlistner.js";
+import { deleteDialog, updateDialog } from "./setEventlistner.js";
 import { showArtists } from "./showArtistsList.js";
 
 let selectArtists;
@@ -125,9 +125,15 @@ export async function patchArtist(artist) {
     }
 }
 // ================== DELETE ============ //
-export async function deleteArtist(artist) {
-    const id = artist.id;
-    const response = await fetch(`${endpoint}/artists/${id}`, {
+
+export function selectArtistDelete(artist) {
+    // Set global varaiable
+    deleteDialog();
+    selectArtists = artist;;
+}
+
+export async function deleteArtist() {
+    const response = await fetch(`${endpoint}/artists/${selectArtists.id}`, {
         method: "DELETE",
     });
     if (response.ok) {
