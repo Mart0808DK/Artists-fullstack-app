@@ -32,16 +32,14 @@ function showFavoriteArtists(filteredArtists) {
             <article>
                 <img src="${artist.image}">
                 <h3>${artist.name}</h3>
-                <p>${artist.birthdate}</p>
-                <p>${artist.activeSince}</p>
-                <i>${artist.genres}</i>
-                <p>${artist.labels}</p>
-                <p>${artist.roles}</p>
-                <p>${artist.shortDescription}</p>
-                <a href=${artist.website}></a>
-                <p>Favortie Artist</p>
+                <p>Date of birth: ${artist.birthdate}</p>
+                <p>Active since: ${artist.activeSince}</p>
+                <i>Genres: ${artist.genres}</i>
+                <p>Record Label: ${artist.labels}</p>
+                <p>Role in band: ${artist.roles}</p>
+                <p>Description: ${artist.shortDescription}</p>
                  <div class="btns">
-                 <label for="favorites">Favorites</label>
+                 <label for="favorites">Add Artist To Favorites</label>
                  <input type="checkbox" name="favorites" class="favorites-chechbox" ${artist.favorites ? "checked" : ""}>
                 </div>
             </article>
