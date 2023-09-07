@@ -10,6 +10,7 @@
 #artists-grid article {
   background-color: #ff8260;
   border: 1px solid #151414;
+  border-radius: 1em;
   padding: 20px;
   text-align: center;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -126,6 +127,7 @@ body {
 
 header {
   background-color: #ff4057;
+  border-radius: 1em;
   color: #fff;
   text-align: center;
   padding: 20px 0;
@@ -142,6 +144,7 @@ footer {
   background-color: #333;
   color: #fff;
   padding: 10px 0;
+  border-radius: 1em;
 }
 
 footer p {
