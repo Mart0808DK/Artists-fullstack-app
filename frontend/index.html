@@ -26,7 +26,7 @@
             <div>
                 <label for="artist-sort">Sort Artist</label>
                 <select id="artist-sort">
-                    <option value="" selected></option>
+                    <option value="" disabled selected>Select Sort</option>
                     <option value="name-ascending">Name A-Z</option>
                     <option value="name-decending">Name Z-A</option>
                     <option value="active-since-ascending">Active Since Earlyiest</option>
@@ -70,7 +70,7 @@
                     <input type="checkbox" name="favorites" id="favorites-create-form">
                 <button>Create Artist</button>
                 <button type="reset">Clear</button>
-                <button type="close">Close Dialog</button>
+                <button type="close">Close</button>
             </form>
         </dialog>
         <dialog id="artists-update-artists">
@@ -98,6 +98,7 @@
                     <input type="checkbox" name="favorites" class="favorites-checkbox">
                 <button class="btn-update-artist">Update Artist</button>
                 <button type="reset">Clear</button>
+                <button type="close">Close</button>
             </form>
         </dialog>
         <dialog id="artist-delete-dialog">

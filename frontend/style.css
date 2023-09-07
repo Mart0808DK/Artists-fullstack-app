@@ -1,174 +1,172 @@
 /* Artist Grid Styles / */
 #artists-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
 }
 
 #artists-grid article {
-  background-color: #ff8260;
-  border: 1px solid #151414;
-  border-radius: 1em;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
+    background-color: #ff8260;
+    border: 1px solid #151414;
+    border-radius: 1em;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
 }
 
 #artists-grid article:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 #artists-grid img {
-  overflow: auto;
-  max-width: 80%;
-  height: 35%;
+    overflow: auto;
+    max-width: 80%;
+    height: 35%;
 }
 
 /* / Animation for Checkbox / */
 .favorites-create-chechbox:checked + label::before {
-  content: "\2713";
-  display: inline-block;
-  font-size: 18px;
-  color: green;
-  animation: checkbox-check 0.3s ease-in-out;
+    content: "\2713";
+    display: inline-block;
+    font-size: 18px;
+    color: green;
+    animation: checkbox-check 0.3s ease-in-out;
 }
 
 @keyframes checkbox-check {
-  0% {
-    transform: scale(0);
-  }
-  100% {
-    transform: scale(1);
-  }
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* / Add some padding to the buttons / */
 
 #create-artist {
-  background-color: #4a1674;
-  font-weight: bolder;
-  font-size: medium;
-  padding: 10px;
-  width: 15%;
-  border-radius: 1em;
+    background-color: #4a1674;
+    font-weight: bolder;
+    font-size: medium;
+    padding: 10px;
+    width: 15%;
+    border-radius: 1em;
 }
 
 #create-artist:hover {
-  background-color: #6d349b;
+    background-color: #6d349b;
 }
 
 .btns button {
-  background-color: #240041;
-  border-radius: 1em;
-  margin-top: 20px;
-  padding: 15px 20px;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
+    background-color: #240041;
+    border-radius: 1em;
+    margin-top: 20px;
+    padding: 15px 20px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .btns button:hover {
-  background-color: #4a1674;
+    background-color: #4a1674;
 }
-
 
 /* / Style the search and sort section / */
 #search-artists {
-  display: flex;
-  align-content: center;
-  justify-content: space-between;
-  margin: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    margin: 20px;
 }
 
 #artist-search {
-  background-color: rgb(234, 217, 194);
-  padding: 10px;
-  width: 70%;
-  border-radius: 1em;
+    background-color: rgb(234, 217, 194);
+    padding: 10px;
+    width: 70%;
+    border-radius: 1em;
 }
 
 #artist-sort {
-  background-color: rgb(234, 217, 194);
-  text-align: left;
-  padding: 10px;
-  width: 60%;
-  border-radius: 1em;
+    background-color: rgb(234, 217, 194);
+    text-align: left;
+    padding: 10px;
+    width: 60%;
+    border-radius: 1em;
 }
 
 #filter-fav {
-  accent-color: #4a1674;
-  display: flex;
-  margin-left: 0;
-  padding: 100px;
-  height: 30px;
-  width: 130px;
-
+    accent-color: #4a1674;
+    display: flex;
+    margin-left: 0;
+    padding: 100px;
+    height: 30px;
+    width: 145px;
 }
 /* / Other general styles / */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #900048;
+    font-family: Arial, sans-serif;
+    background-color: #900048;
 }
 
 header {
-  background-color: #ff4057;
-  border-radius: 1em;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
+    background-color: #ff4057;
+    border-radius: 1em;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
 }
 
 header h1 {
-  font-weight: bolder;
-  margin: 0;
-  color: black
+    font-weight: bolder;
+    margin: 0;
+    color: black;
 }
 
 footer {
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-  border-radius: 1em;
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 1em;
 }
 
 footer p {
-  margin: 0;
+    margin: 0;
 }
 
 /* / Dialog styles / */
 #artists-create-dialog {
-  background-color: rgb(234, 217, 194);
-  border-radius: 1em;
-  width: 60%;
-  height: 70%;
-  border: none;
-  padding: 30px;
+    background-color: rgb(234, 217, 194);
+    border-radius: 1em;
+    width: 25%;
+    height: 70%;
+    border: none;
+    padding: 30px;
 }
 
 #artists-update-artists {
-  background-color: rgb(234, 217, 194);
-  border-radius: 1em;
-  width: 60%;
-  height: 70%;
-  border: none;
-  padding: 30px;
+    background-color: rgb(234, 217, 194);
+    border-radius: 1em;
+    width: 60%;
+    height: 70%;
+    border: none;
+    padding: 30px;
 }
 
 #artist-delete-dialog {
-  background-color: rgb(234, 217, 194);
-  border-radius: 1em;
-  width: 20%;
-  height: 20%;
-  border: none;
-  padding: 30px;
+    background-color: rgb(234, 217, 194);
+    border-radius: 1em;
+    width: 20%;
+    height: 20%;
+    border: none;
+    padding: 30px;
 }
 
 form {
-  display: grid;
-  gap: 10px;
+    display: grid;
+    gap: 10px;
 }
