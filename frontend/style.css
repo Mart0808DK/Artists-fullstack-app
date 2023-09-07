@@ -60,13 +60,14 @@
   background-color: #6d349b;
 }
 
-.btns button {
+.btn button {
   display: flex;
-  align-items: center;
-  border-radius: 1em;
-  margin-top: 10px;
-  padding: 5px 10px;
   background-color: #240041;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1em;
+  margin-top: 20px;
+  padding: 10px 10px;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -77,16 +78,6 @@
   background-color: #4a1674;
 }
 
-.btn-update-artists,
-.btn-delete-artists {
-    background-color: #ff4500;
-    color: #fff;
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    margin-right: 5px;
-}
 
 /* / Style the search and sort section / */
 #search-artists {
@@ -153,20 +144,34 @@ footer p {
 }
 
 /* / Dialog styles / */
-dialog {
+#artists-create-dialog {
+  background-color: rgb(234, 217, 194);
+  border-radius: 1em;
+  width: 60%;
+  height: 70%;
   border: none;
-  padding: 20px;
+  padding: 30px;
+}
+
+#artists-update-artists {
+  background-color: rgb(234, 217, 194);
+  border-radius: 1em;
+  width: 60%;
+  height: 70%;
+  border: none;
+  padding: 30px;
+}
+
+#artist-delete-dialog {
+  background-color: rgb(234, 217, 194);
+  border-radius: 1em;
+  width: 20%;
+  height: 20%;
+  border: none;
+  padding: 30px;
 }
 
 form {
   display: grid;
   gap: 10px;
-}
-
-/* / Toast message styles */
-#toast-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
 }
